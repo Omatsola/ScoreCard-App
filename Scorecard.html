@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScoreCard</title>
+    <link rel="stylesheet" href="Scorecard.css">
+</head>
+<body>
+    
+    <header class="app-header">
+        <h1>Scorecard</h1>
+        <div class="header-actions">
+            <button id="resetAllBtn" class="btn btn-secondary" type="button" title="Reset all scores to zero">
+                Reset All
+            </button>
+            <button id="themeToggleBtn" class="btn btn-secondary" type="button" aria-label="Toggle dark mode">
+                <span id="themeIcon">🌙</span> <span id="themeText">Dark Mode</span>
+            </button>
+        </div>
+    </header>
+
+  <main class="container">
+    <!-- Add Category Form -->
+    <section class="add-category-card" aria-label="Add a new category">
+      <form id="addCategoryForm" class="add-form">
+        <div class="input-group">
+          <label for="categoryNameInput" class="sr-only">Category or Player Name</label>
+          <input
+            type="text"
+            id="categoryNameInput"
+            placeholder="Enter category or player name..."
+            maxlength="30"
+            required
+          />
+        </div>
+
+        <div class="color-picker-group" title="Choose card accent color">
+          <label for="categoryColorInput">Color:</label>
+          <input type="color" id="categoryColorInput" value="#3b82f6" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">+ Add Category</button>
+      </form>
+    </section>
+
+    <!-- Scorecard Grid -->
+    <section id="scorecardGrid" class="scorecard-grid" aria-live="polite"></section>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="empty-state hidden">
+      <p>No categories yet. Add a player or category above to start keeping score!</p>
+    </div>
+  </main>
+
+  <script src="Scorecard.js"></script>
+
+</body>
+</html>
